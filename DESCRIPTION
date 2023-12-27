@@ -1,0 +1,18 @@
+Package: EasyDataR
+Title: Reads in State Bank of Pakistan's EasyData in R
+Version: 0.0.0.9000
+Authors@R: 
+    person("Ateeb Akhter Shah", "Syed", , "syed.ateeb@wmich.edu", role = c("aut", "cre"))
+Description: This package reads in data series from the EasyData Platform hosted by the State Bank of Pakistan - Central Bank of Pakistan. There are more than 10,000 time-series available on this platform. Academicians, reseachers, and students can download these series into R using this package. It is important to note that this package is intended to read the data and not to perform time-series analysis in detail, this is why it only offers simple features. Analysis using this dataset is author's one of the work-in-progress projects.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Imports: 
+    jsonlite,
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Config/testthat/edition: 3
