@@ -23,8 +23,8 @@ library(devtools)
 devtools::install_github(("drateeb/EasyDataR"))
 library(EasyDataR)
 
-#Verifying EasyData API Key
-EasyData_key_setup("C10D3D29160CE5693F56AA9846ABB2C423D8B123")
+# Verifying EasyData API Key
+EasyData_key_setup("C10D3D29160CE5693F56AA9846ABB2C423D8B123") <- type in/paste your EasyData API Key! 
 
 # Finding if the EasyData API Key has been verified
 
