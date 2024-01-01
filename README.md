@@ -19,8 +19,11 @@ But this package is not intended to conduct these analysis but I am programming 
 
 # How to install and use
 The following provides detailed guide on how to install the EasyDataR package through Github and use functions within the EasyDataR
+
 library(devtools)
+
 devtools::install_github(("drateeb/EasyDataR"))
+
 library(EasyDataR)
 
 # Verifying EasyData API Key
