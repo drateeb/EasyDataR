@@ -16,3 +16,33 @@ This package is intended to identify a session with EasyData API key, obtain inf
 7. In and Out-of-Sample Forecasts
 
 But this package is not intended to conduct these analysis but I am programming another one, which will be able to perform all of these operations. Stay Tuned!
+
+# How to install and use
+The following provides detailed guide on how to install the EasyDataR package through Github and use functions within the EasyDataR
+library(devtools)
+devtools::install_github(("drateeb/EasyDataR"))
+library(EasyDataR)
+
+# Verifying EasyData API Key
+EasyData_key_setup("C10D3D29160CE5693F56AA9846ABB2C423D8B123") <- type in/paste your EasyData API Key! 
+
+# Finding if the EasyData API Key has been verified
+
+session_has_Easydata_key()
+
+# Getting the entered key for further use
+
+get_Easydata_key()
+
+# using the API key to get information 
+# on Weighted-average Overnight Repo Rate
+
+get_info_on_series("TS_GP_IR_REPOMR_D.ORR",8)
+
+# get data of the Weighted-average Overnight Repo Rate
+
+WAORR<- download_series("TS_GP_IR_REPOMR_D.ORR",Easydata_key, "2015-05-25" ,"2023-12-20", "csv")
+
+# taking a look at the head of the data
+
+head(WAORR)
