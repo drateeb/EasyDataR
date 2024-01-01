@@ -34,8 +34,7 @@ session_has_Easydata_key()
 
 get_Easydata_key()
 
-# using the API key to get information 
-# on Weighted-average Overnight Repo Rate
+# using the API key to get information on Weighted-average Overnight Repo Rate
 
 get_info_on_series("TS_GP_IR_REPOMR_D.ORR",8)
 
@@ -46,3 +45,11 @@ WAORR<- download_series("TS_GP_IR_REPOMR_D.ORR",Easydata_key, "2015-05-25" ,"202
 # taking a look at the head of the data
 
 head(WAORR)
+
+# Tranforming WAORR data to a usable time-series
+
+build_time_series(WAORR)
+
+# Plotting the time-series saved through build_time_series in object called "time_series"
+
+plot_time_series(time_series)
