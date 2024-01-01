@@ -21,18 +21,24 @@
 #' The output will be a series called "time-series" to be used in subsequent analysis.
 #'
 build_time_series <- function(series) {
-  series$Date <- lubridate::ymd(series$Observation.Date)  # Convert to Date type if not already
+  # Convert to Date type if not already
+  series$Date <- ymd(series$Observation.Date)
+
+  # Remove rows with NA values in Observation.Value column
+  series <- series[!is.na(series$Observation.Value), ]
 
   # Sort the dataset by the 'Date' column
   sorted_date_data <- series[order(series$Date), ]
 
   # Create time-series object
-  series <- xts::xts(sorted_date_data$Observation.Value, order.by = sorted_date_data$Date)
+  time_series <- xts(sorted_date_data$Observation.Value, order.by = sorted_date_data$Date)
 
   # Set column names
-  colnames(series) <- c("Value")
-  assign("time_series", series, envir = .GlobalEnv)
-  # Return the time series directly
-  return(series)
+  colnames(time_series) <- c("Value")
 
+  # Assign the time series to the global environment
+  assign("time_series", time_series, envir = .GlobalEnv)
+
+  # Return the time series directly
+  return(time_series)
 }
