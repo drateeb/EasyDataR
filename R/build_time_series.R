@@ -31,7 +31,7 @@ build_time_series <- function(series) {
   sorted_date_data <- series[order(series$Date), ]
 
   # Create time-series object
-  time_series <- xts(sorted_date_data$Observation.Value, order.by = sorted_date_data$Date)
+  time_series <- xts::xts(sorted_date_data$Observation.Value, order.by = sorted_date_data$Date)
 
   # Set column names
   colnames(time_series) <- c("Value")
