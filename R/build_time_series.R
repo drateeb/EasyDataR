@@ -22,7 +22,7 @@
 #'
 build_time_series <- function(series) {
   # Convert to Date type if not already
-  series$Date <- ymd(series$Observation.Date)
+  series$Date <- lubridate::ymd(series$Observation.Date)
 
   # Remove rows with NA values in Observation.Value column
   series <- series[!is.na(series$Observation.Value), ]
