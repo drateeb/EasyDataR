@@ -58,8 +58,8 @@ build_time_series(WAORR)
 plot_time_series(time_series)
 
 # Download customized dataset, that is multiple time-series in a single command for analysis
-# The code below will download four time-series from Easydata database
-# Workers' remittances, Average USD per PKR, Exports and Imports
+
+The code below will download four time-series from Easydata database: Workers' remittances, Average USD per PKR, Exports and Imports
 
 series_ids <- c("TS_GP_BOP_WR_M.WR0340","TS_GP_ER_FAERPKR_M.E00220","TS_GP_BOP_BPM6SUM_M.P00030", "TS_GP_BOP_BPM6SUM_M.P00070")
 download_dataset(series_ids,"2016-01-01","2023-12-31", "csv")
