@@ -24,9 +24,7 @@
 #'
 #' end_date <- "2023-12-31"
 #'
-#' custon_data <- download_dataset(series_ids_to_download,"2016-01-01","2023-12-31", "csv")
-
-
+#' download_dataset(series_ids,"2016-01-01","2023-12-31", "csv")
 download_dataset <- function(series_ids, start_date, end_date, file_type = "csv") {
   series_data <- list()
 

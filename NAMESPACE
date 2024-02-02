@@ -2,6 +2,7 @@
 
 export(EasyData_key_setup)
 export(build_time_series)
+export(download_dataset)
 export(download_series)
 export(get_Easydata_key)
 export(get_info_on_series)
