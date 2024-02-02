@@ -56,8 +56,8 @@ download_dataset <- function(series_ids, start_date, end_date, file_type = "csv"
 
     # Create a data frame with unique dates from all series
     unique_dates <- sort(unique(data_frame$Observation_Date))
-    combined_xts <- xts(matrix(NA, nrow = length(unique_dates), ncol = length(series_data)),
-                        order.by = unique_dates)
+    combined_xts <- xts::xts(matrix(NA, nrow = length(unique_dates), ncol = length(series_data)),
+                             order.by = unique_dates)
 
     # Fill the xts object with data from each series
     for (i in seq_along(series_data)) {
