@@ -14,7 +14,9 @@
 #' ### Suppose you want to download 4 variables in a dataset starting 2016-01-01
 #'
 #' This function assumes that the user has already verified the Easydata API
-#' key and it is present in object "Easydata_key"
+#' key and it is present in object "Easydata_key". It also assumes that the
+#' researcher's variables are at the same frequency, that is, daily, weekly,
+#' monthly, quarterly or annually.
 #'
 #' series_ids <- c("TS_GP_BOP_WR_M.WR0340","TS_GP_ER_FAERPKR_M.E00220","TS_GP_BOP_BPM6SUM_M.P00030", "TS_GP_BOP_BPM6SUM_M.P00070")
 #'
@@ -29,8 +31,8 @@ download_dataset <- function(series_ids, start_date, end_date, file_type = "csv"
   series_data <- list()
 
   # Download series data
-  for (i in seq_along(series_ids_to_download)) {
-    series_id <- series_ids_to_download[i]
+  for (i in seq_along(series_ids)) {
+    series_id <- series_ids[i]
     series_url <- paste0("https://easydata.sbp.org.pk/api/v1/series/", series_id, "/data?api_key=",Easydata_key,"&start_date=", start_date, "&end_date=", end_date, "&format=", file_type)
 
     tryCatch({
@@ -64,7 +66,7 @@ download_dataset <- function(series_ids, start_date, end_date, file_type = "csv"
       combined_xts[, i] <- obs_values[match(unique_dates, obs_dates)]
     }
 
-    colnames(combined_xts) <- series_ids_to_download
+    colnames(combined_xts) <- series_ids
 
     return(combined_xts)
   } else {
