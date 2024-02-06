@@ -2,7 +2,7 @@
 EasyDataR is a unofficial R package to read in data from EasyData platform of the State Bank of Pakistan
 
 # Details about EasyData of the State Bank of Pakistan
-EasyData platform of the State Bank of Pakistan is the largest repository of Macroeconomic time-series. It has more than 2 million observations covering more than 11,000 time-series related to economy of Pakistan. 
+EasyData platform of the State Bank of Pakistan is the largest repository of Macroeconomic time-series. It has more than 2 million observations covering more than 13,000 time-series related to economy of Pakistan. 
 
 # About the package
 This package is intended to identify a session with EasyData API key, obtain information about a particular series of interest, and download a series of interest to R for further analysis. Although, I could have added reading in the series as time-series object in R and conduct basic analysis such as:
